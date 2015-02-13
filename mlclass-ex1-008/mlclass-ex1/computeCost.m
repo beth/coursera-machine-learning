@@ -13,6 +13,17 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
+%J(theta) = 1/(2*m) * sum((h_theta(x(i))-y(i))^2)
+%Columns of X are the different variables, rows are the different data
+%points
+m = length(y);
+Js = zeros(m,1);
+for i = 1:1:m
+    Js(i) = (theta'*X(i,:)'-y(i))^2;
+end
+
+J = 1/(2*m)*sum(Js);
+
 
 
 
